@@ -134,7 +134,7 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
   
   s.subspec 'Objs' do |ss|
-      ss.source_files = 'Classes/Objs'
+      ss.source_files = 'Classes/Objs', 'Classes/Objs/TestPodObject.{h,m}'
   end
 
 end
