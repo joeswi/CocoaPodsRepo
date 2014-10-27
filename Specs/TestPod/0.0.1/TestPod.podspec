@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :svn => "http://joeswi@oswin.chinacloudapp.cn:8443/svn/SVN_01/code/CocoaPods/TestPod"}
+  s.source       = { :svn => "http://joeswi@oswin.chinacloudapp.cn:8443/svn/SVN_01/code/CocoaPods/TestPod", :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,10 +89,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "Classes/Header/Common.h"
+  s.exclude_files = ""
 
-  s.public_header_files = "Classes/Header/**/*.h"
+  s.public_header_files = "Classes/Header/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -132,5 +132,9 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+  
+  s.subspec 'Objs' do |ss|
+      ss.source_files = 'Classes/Objs'
+  end
 
 end
